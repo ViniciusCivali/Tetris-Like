@@ -102,6 +102,10 @@ public class Tetromino : MonoBehaviour
         if (!CheckIsValidPosition())
         {
             transform.position += new Vector3(0, 1, 0);
+
+            enabled = false;
+
+            FindObjectOfType<Game>().SpawnNextTetromino();
         }
     }
 
